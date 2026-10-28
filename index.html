@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FocusFlow: organize suas tarefas e acompanhe seu progresso diário.">
+  <title>FocusFlow — Organize seu dia</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="../FocusFlow/icone.png">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#">Focus<span>Flow</span></a>
+    <button id="theme-toggle" class="theme-button" aria-label="Alternar tema">
+      ☾
+    </button>
+  </header>
+
+  <main class="container">
+    <section class="welcome">
+      <p class="eyebrow">SEU ESPAÇO DE PRODUTIVIDADE</p>
+      <h1>Organize suas ideias.<br><span>Conquiste seu dia.</span></h1>
+      <p class="subtitle">Pequenos passos geram grandes resultados.</p>
+    </section>
+
+    <section class="stats" aria-label="Resumo das tarefas">
+      <article class="stat-card">
+        <span>Total de tarefas</span>
+        <strong id="total-count">0</strong>
+      </article>
+      <article class="stat-card">
+        <span>Concluídas</span>
+        <strong id="completed-count">0</strong>
+      </article>
+      <article class="stat-card">
+        <span>Progresso</span>
+        <strong id="progress-count">0%</strong>
+      </article>
+    </section>
+
+    <section class="task-panel">
+      <div class="section-heading">
+        <div>
+          <h2>Minhas tarefas</h2>
+          <p>Transforme seus planos em ações.</p>
+        </div>
+      </div>
+
+      <form id="task-form">
+        <label for="task-input">Nova tarefa</label>
+        <div class="input-row">
+          <input
+            id="task-input"
+            type="text"
+            placeholder="Ex.: Estudar JavaScript"
+            maxlength="120"
+            required
+          >
+          <button class="primary-button" type="submit">+ Adicionar</button>
+        </div>
+      </form>
+
+      <div class="filters" aria-label="Filtrar tarefas">
+        <button class="filter active" data-filter="all">Todas</button>
+        <button class="filter" data-filter="pending">Pendentes</button>
+        <button class="filter" data-filter="completed">Concluídas</button>
+      </div>
+
+      <p id="task-feedback" class="feedback" aria-live="polite"></p>
+      <ul id="task-list" class="task-list"></ul>
+      <p id="empty-state" class="empty-state">
+        Você ainda não tem tarefas. Adicione sua primeira!
+      </p>
+    </section>
+  </main>
+</body>
+</html>
